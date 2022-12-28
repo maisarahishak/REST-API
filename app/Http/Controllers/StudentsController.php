@@ -21,7 +21,7 @@ class StudentsController extends Controller
     public function search($name)
     {
         return Student::where("name","like","%".$name."%")->get();
-        //return Student::where("address","like","%".$aaddress."%")->get();
+        //return Student::where("address","like","%".$address."%")->get();
     }
 
     public function paginate()

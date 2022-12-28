@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentsController;
 use App\Models\Student;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,8 @@ use App\Models\Student;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::post('/auth/register',[AuthController::class,'register']);
 
 Route::post('login', [LoginController::class, 'login']);
 
