@@ -23,9 +23,6 @@ Route::post('login', [LoginController::class, 'login']);
 
 // only authenticated user can access to products
 Route::middleware('auth:api')->group(function () {
-    //
-});
-
 Route::post("add",[StudentsController::class,'add']);
 Route::put("update",[StudentsController::class,'update']);
 Route::delete("delete/{id}",[StudentsController::class,'delete']);
