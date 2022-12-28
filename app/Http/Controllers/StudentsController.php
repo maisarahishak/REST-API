@@ -21,7 +21,6 @@ class StudentsController extends Controller
     public function search($name)
     {
         return Student::where("name","like","%".$name."%")->get();
-        //return Student::where("address","like","%".$address."%")->get();
     }
 
     public function paginate()
@@ -74,18 +73,6 @@ class StudentsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
     {
         //
     }

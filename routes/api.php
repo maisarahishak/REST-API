@@ -19,7 +19,6 @@ use App\Http\Controllers\Api\AuthController;
 */
 
 Route::post('/auth/register',[AuthController::class,'register']);
-
 Route::post('login', [LoginController::class, 'login']);
 
 // only authenticated user can access to products
@@ -30,7 +29,6 @@ Route::middleware('auth:api')->group(function () {
 
 Route::get("search/{request}",[StudentsController::class,'search']);
 Route::get("paginate",[StudentsController::class,'paginate']); //pagination
-
 Route::apiResource("student", StudentsController::class); // only return name and address
 Route::post("upload",[StudentsController::class,'upload']);
 
