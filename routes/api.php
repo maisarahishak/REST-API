@@ -23,12 +23,16 @@ Route::post('login', [LoginController::class, 'login']);
 
 // only authenticated user can access to products
 Route::middleware('auth:api')->group(function () {
-Route::post("add",[StudentsController::class,'add']);
-Route::put("update",[StudentsController::class,'update']);
-Route::delete("delete/{id}",[StudentsController::class,'delete']);
-Route::get("search/{request}",[StudentsController::class,'search']);
-Route::get("paginate",[StudentsController::class,'paginate']); //pagination
-Route::apiResource("student", StudentsController::class); // only return name and address
-Route::post("upload",[StudentsController::class,'upload']); // upload csv 
+    Route::post("add",[StudentsController::class,'add']);
+    Route::put("update",[StudentsController::class,'update']);
+    Route::delete("delete/{id}",[StudentsController::class,'delete']);
+    Route::get("search/{request}",[StudentsController::class,'search']);
+    Route::get("paginate",[StudentsController::class,'paginate']); //pagination
+    Route::apiResource("student", StudentsController::class); // only return name and address
+    Route::post("upload",[StudentsController::class,'upload']); // upload csv
+});
+
+
+ 
 
 

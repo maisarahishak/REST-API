@@ -1,4 +1,1 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> dea56a7d7e6ef9cfd875c3a8a2d8eb571a1f496b
+Link to Postman collection: https://elements.getpostman.com/redirect?entityId=25076644-15674690-6f29-4a01-bb12-a7658def8fae&entityType=collection
