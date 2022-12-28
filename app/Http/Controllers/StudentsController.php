@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Providers\AppServiceProvider;
 
 class StudentsController extends Controller
 {
@@ -14,13 +15,13 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        return Student::all();
+        return Student::all("name","address");
     }
 
-    function search($name)
+    public function search($name)
     {
         return Student::where("name","like","%".$name."%")->get();
-        //return Student::where("email","like","%".$email."%")->get();
+        //return Student::where("address","like","%".$aaddress."%")->get();
     }
 
     public function paginate()
@@ -28,6 +29,12 @@ class StudentsController extends Controller
         return Student::simplePaginate(1);
     }
 
+    public function upload(Request $req){
+        $result=$req->file('file')->store('apiDocs');
+        return["result"=>$result];
+    }
+    
+    
     /**
      * Show the form for creating a new resource.
      *

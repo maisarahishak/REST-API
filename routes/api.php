@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\StudentsController;
+use App\Models\Student;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,10 @@ Route::middleware('auth:api')->group(function () {
     //Route::get("list",[StudentController::class,'list']);
 });
 
-Route::get("search/{name}",[StudentsController::class,'search']);
+Route::get("search/{request}",[StudentsController::class,'search']);
 Route::get("paginate",[StudentsController::class,'paginate']); //pagination
 
 Route::apiResource("student", StudentsController::class); // only return name and address
+Route::post("upload",[StudentsController::class,'upload']);
+
 
